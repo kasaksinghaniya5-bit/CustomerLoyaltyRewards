@@ -1,0 +1,311 @@
+.leaderboard-page {
+  min-height: 100vh;
+  background: #faf8fc;
+  color: #30243e;
+  padding: 40px 7%;
+}
+
+.leaderboard-back {
+  display: inline-block;
+  color: #8252b5;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.leaderboard-header {
+  max-width: 700px;
+  margin-bottom: 35px;
+}
+
+.leaderboard-header > span,
+.leaderboard-section-heading > div > span {
+  color: #9b72c8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.leaderboard-header h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 5vw, 52px);
+  margin: 12px 0;
+}
+
+.leaderboard-header p {
+  color: #82778e;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.my-rank-card {
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  background: linear-gradient(120deg, #70449d, #a477c5);
+  color: white;
+  padding: 28px 32px;
+  border-radius: 20px;
+  margin-bottom: 42px;
+  box-shadow: 0 12px 30px rgba(112, 68, 157, 0.18);
+}
+
+.my-rank-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.my-rank-card span {
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  opacity: 0.8;
+  font-weight: 700;
+}
+
+.my-rank-card h2 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.leaderboard-content {
+  max-width: 900px;
+}
+
+.leaderboard-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.leaderboard-section-heading h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 27px;
+  margin: 7px 0 0;
+}
+
+.top-ten-label {
+  background: #f1e7ff;
+  color: #7a45a9;
+  border-radius: 20px;
+  padding: 8px 13px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  border: 1px solid #eee7f4;
+  border-radius: 16px;
+  padding: 17px 22px;
+  box-shadow: 0 5px 20px rgba(74, 48, 96, 0.035);
+}
+
+.my-leaderboard-row {
+  border: 2px solid #a477c5;
+  background: #fefbff;
+}
+
+.leaderboard-rank {
+  width: 38px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  color: #82778e;
+}
+
+.rank-1,
+.rank-2,
+.rank-3 {
+  font-size: 25px;
+}
+
+.leaderboard-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.leaderboard-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f1e7ff;
+  color: #8252b5;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+.leaderboard-user strong {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.you-label {
+  margin-left: 9px;
+  background: #f1e7ff;
+  color: #8252b5;
+  padding: 4px 7px;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.leaderboard-points {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.leaderboard-points strong {
+  font-size: 17px;
+  color: #68418e;
+}
+
+.leaderboard-points span {
+  color: #a39aa9;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.leaderboard-empty {
+  background: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 18px;
+  color: #82778e;
+}
+
+.leaderboard-error {
+  color: #b54c4c;
+  background: #fff0f0;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+@media (max-width: 600px) {
+  .leaderboard-page {
+    padding: 30px 5%;
+  }
+
+  .my-rank-card {
+    padding: 23px 20px;
+  }
+
+  .my-rank-card h2 {
+    font-size: 24px;
+  }
+
+  .leaderboard-row {
+    gap: 10px;
+    padding: 15px 12px;
+  }
+
+  .leaderboard-rank {
+    width: 28px;
+  }
+}
+
+
+/* =====================================
+   LEADERBOARD - DARK MODE
+===================================== */
+
+:root[data-theme="dark"] .leaderboard-page {
+  background: #17141f;
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .leaderboard-back {
+  color: #c5a2f5;
+}
+
+:root[data-theme="dark"] .leaderboard-header > span,
+:root[data-theme="dark"] .leaderboard-section-heading > div > span {
+  color: #c5a2f5;
+}
+
+:root[data-theme="dark"] .leaderboard-header h1,
+:root[data-theme="dark"] .leaderboard-section-heading h2 {
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .leaderboard-header p {
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .my-rank-card {
+  background: linear-gradient(120deg, #493064, #76519a);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+:root[data-theme="dark"] .top-ten-label {
+  background: #49365f;
+  color: #e0d0ff;
+}
+
+:root[data-theme="dark"] .leaderboard-row {
+  background: #211c2d;
+  border-color: #393147;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .my-leaderboard-row {
+  background: #302441;
+  border: 2px solid #a879d8;
+}
+
+:root[data-theme="dark"] .leaderboard-rank {
+  color: #c4b5d6;
+}
+
+:root[data-theme="dark"] .leaderboard-user strong {
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .leaderboard-avatar {
+  background: #49365f;
+  color: #e0d0ff;
+}
+
+:root[data-theme="dark"] .you-label {
+  background: #49365f;
+  color: #e0d0ff;
+}
+
+:root[data-theme="dark"] .leaderboard-points strong {
+  color: #d6baff;
+}
+
+:root[data-theme="dark"] .leaderboard-points span {
+  color: #9f92af;
+}
+
+:root[data-theme="dark"] .leaderboard-empty {
+  background: #211c2d;
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .leaderboard-error {
+  color: #ffb7c0;
+  background: #40232a;
+}

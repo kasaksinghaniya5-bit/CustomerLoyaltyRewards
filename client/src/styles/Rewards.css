@@ -1,0 +1,526 @@
+
+.rewards-page {
+  min-height: 100vh;
+  padding: 45px 8%;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #f7f3ff, #fff8f5);
+  font-family: "DM Sans", sans-serif;
+  color: #342b45;
+}
+
+.rewards-back {
+  color: #8058c7;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rewards-header {
+  margin: 55px 0 45px;
+}
+
+.rewards-header > span {
+  color: #8058c7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.rewards-header h1 {
+  max-width: 650px;
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  line-height: 1.3;
+  margin: 14px 0;
+}
+
+.rewards-header p {
+  color: #81798e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.rewards-catalogue {
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #eeeaf3;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(60, 45, 80, 0.05);
+}
+
+.rewards-section-heading h2 {
+  color: #342b45;
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.rewards-section-heading p {
+  color: #81798e;
+  font-size: 12px;
+  margin: 0;
+}
+
+.rewards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.reward-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #eeeaf3;
+  border-radius: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reward-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(60, 45, 80, 0.08);
+}
+
+.reward-image {
+  min-height: 175px;
+  display: grid;
+  place-items: center;
+  font-size: 55px;
+  background: #f1ebff;
+}
+
+.reward-card-content {
+  padding: 20px;
+}
+
+.reward-category {
+  color: #8058c7;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.reward-card-content h3 {
+  color: #342b45;
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+.reward-description {
+  color: #81798e;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.reward-cost {
+  color: #6841ad;
+  font-size: 15px;
+  font-weight: 800;
+  margin: 15px 0 5px;
+}
+
+.reward-stock {
+  color: #81798e;
+  font-size: 10px;
+}
+
+.reward-card-content button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 9px;
+  background: #8058c7;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reward-card-content button:disabled {
+  background: #c9c1d4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 850px) {
+  .rewards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .rewards-page {
+    padding: 30px 18px;
+  }
+
+  .rewards-header h1 {
+    font-size: 29px;
+  }
+
+  .rewards-catalogue {
+    padding: 20px;
+  }
+
+  .rewards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reward-image img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  display: block;
+}
+
+.rewards-empty {
+  grid-column: 1 / -1;
+  padding: 55px 20px;
+  text-align: center;
+  color: #81798e;
+}
+
+.rewards-empty h3 {
+  color: #342b45;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.rewards-empty p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Redemption Confirmation Modal */
+
+.redemption-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 24, 48, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.redemption-modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 36px;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+  animation: redemptionModalAppear 0.25s ease;
+}
+
+@keyframes redemptionModalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.redemption-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  border: none;
+  background: #f4f0fa;
+  color: #655779;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.redemption-modal-icon {
+  display: block;
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.redemption-modal-label {
+  color: #9b72c8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.redemption-modal h2 {
+  color: #30243e;
+  font-size: 26px;
+  margin: 12px 0;
+}
+
+.redemption-modal > p {
+  color: #82778e;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.redemption-modal-cost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f3ff;
+  padding: 18px;
+  border-radius: 14px;
+  margin: 24px 0;
+  color: #655779;
+  font-size: 13px;
+}
+
+.redemption-modal-cost strong {
+  color: #8b58c5;
+  font-size: 16px;
+}
+
+.redemption-modal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.redemption-modal-actions button {
+  flex: 1;
+  padding: 13px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.redemption-cancel-btn {
+  background: #f3eff7;
+  color: #655779;
+  border: none;
+}
+
+.redemption-confirm-btn {
+  background: #9162c5;
+  color: #ffffff;
+  border: none;
+}
+
+.redemption-confirm-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .redemption-modal {
+    padding: 28px 20px;
+  }
+
+  .redemption-modal-actions {
+    flex-direction: column;
+  }
+}
+
+/* Redemption Success Screen */
+
+.redemption-code-box {
+  background: #f8f3ff;
+  border: 1px dashed #b18bd7;
+  border-radius: 16px;
+  padding: 20px 14px;
+  margin: 22px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.redemption-code-box span {
+  color: #8b72a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.redemption-code-box strong {
+  color: #7442a7;
+  font-size: 21px;
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+}
+
+.redemption-code-box button {
+  border: none;
+  background: #ffffff;
+  color: #8252b5;
+  border-radius: 9px;
+  padding: 9px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.redemption-expiry {
+  color: #82778e;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.redemption-success-modal > .redemption-confirm-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+
+/* =====================================
+   REWARDS PAGE - DARK MODE
+===================================== */
+
+:root[data-theme="dark"] .rewards-page {
+  background: linear-gradient(135deg, #17141f, #241a29);
+  color: #e0d5ed;
+}
+
+:root[data-theme="dark"] .rewards-back,
+:root[data-theme="dark"] .rewards-header > span {
+  color: #c5a2f5;
+}
+
+:root[data-theme="dark"] .rewards-header h1,
+:root[data-theme="dark"] .rewards-section-heading h2,
+:root[data-theme="dark"] .reward-card-content h3,
+:root[data-theme="dark"] .rewards-empty h3 {
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .rewards-header p,
+:root[data-theme="dark"] .rewards-section-heading p,
+:root[data-theme="dark"] .reward-description,
+:root[data-theme="dark"] .reward-stock,
+:root[data-theme="dark"] .rewards-empty {
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .rewards-catalogue {
+  background: #211c2d;
+  border-color: #393147;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .rewards-page .reward-card {
+  background: #292236;
+  border-color: #40364f;
+}
+
+:root[data-theme="dark"] .rewards-page .reward-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+:root[data-theme="dark"] .rewards-page .reward-image {
+  background: #382b50;
+}
+
+:root[data-theme="dark"] .reward-category {
+  color: #c5a2f5;
+}
+
+:root[data-theme="dark"] .reward-cost {
+  color: #d6baff;
+}
+
+:root[data-theme="dark"] .reward-card-content button {
+  background: #8058c7;
+  color: #ffffff;
+}
+
+:root[data-theme="dark"] .reward-card-content button:hover {
+  background: #966fd7;
+}
+
+:root[data-theme="dark"] .reward-card-content button:disabled {
+  background: #51485f;
+  color: #b5a9c5;
+}
+
+/* Redemption Confirmation Modal */
+
+:root[data-theme="dark"] .redemption-modal {
+  background: #211c2d;
+  border: 1px solid #40364f;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme="dark"] .redemption-modal-close {
+  background: #382b50;
+  color: #e0d5ed;
+}
+
+:root[data-theme="dark"] .redemption-modal-label {
+  color: #c5a2f5;
+}
+
+:root[data-theme="dark"] .redemption-modal h2 {
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .redemption-modal > p {
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .redemption-modal-cost {
+  background: #302441;
+  color: #c4b5d6;
+}
+
+:root[data-theme="dark"] .redemption-modal-cost strong {
+  color: #d6baff;
+}
+
+:root[data-theme="dark"] .redemption-cancel-btn {
+  background: #382f45;
+  color: #e0d5ed;
+}
+
+:root[data-theme="dark"] .redemption-confirm-btn {
+  background: #8058c7;
+  color: #ffffff;
+}
+
+:root[data-theme="dark"] .redemption-confirm-btn:hover {
+  background: #966fd7;
+}
+
+/* Redemption Success Screen */
+
+:root[data-theme="dark"] .redemption-code-box {
+  background: #302441;
+  border-color: #8058c7;
+}
+
+:root[data-theme="dark"] .redemption-code-box span {
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .redemption-code-box strong {
+  color: #d6baff;
+}
+
+:root[data-theme="dark"] .redemption-code-box button {
+  background: #49365f;
+  color: #e0d0ff;
+}
+
+:root[data-theme="dark"] .redemption-code-box button:hover {
+  background: #5b4375;
+}
+
+:root[data-theme="dark"] .redemption-expiry {
+  color: #b5a9c5;
+}

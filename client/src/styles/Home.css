@@ -1,0 +1,251 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+
+.home-container {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 10% 10%, #eee7ff 0%, transparent 38%),
+    radial-gradient(ellipse at 90% 45%, #ffe9df 0%, transparent 35%),
+    #fcfaf8;
+  color: #29243a;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 7%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand-icon {
+  color: #8c69d5;
+  font-size: 27px;
+}
+
+.header-tagline {
+  color: #898393;
+  font-size: 13px;
+}
+
+.home-main {
+  width: 86%;
+  max-width: 1250px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.welcome-section {
+  text-align: center;
+  padding: 65px 20px 55px;
+}
+
+.welcome-label {
+  display: inline-block;
+  color: #8666c5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.welcome-section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 5vw, 65px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+.welcome-section h1 span {
+  color: #9471d4;
+}
+
+.welcome-section p {
+  color: #827d8c;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 470px;
+  margin: 22px auto 0;
+}
+
+.portal-section {
+  padding-bottom: 65px;
+}
+
+.portal-heading {
+  margin-bottom: 25px;
+}
+
+.portal-heading h2 {
+  font-size: 21px;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.portal-heading p {
+  color: #918b99;
+  font-size: 13px;
+  margin: 0;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 20px;
+}
+
+.portal-card {
+  padding: 30px;
+  border-radius: 22px;
+  min-height: 235px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.portal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(65, 45, 90, 0.10);
+}
+
+.customer-card {
+  background: linear-gradient(145deg, #eee6ff, #f8edff);
+  border: 1px solid #e5d9fa;
+}
+
+.admin-card {
+  background: linear-gradient(145deg, #e1f2ed, #eff8f3);
+  border: 1px solid #d5e9e1;
+}
+
+.staff-card {
+  background: linear-gradient(145deg, #fff0df, #fff6e9);
+  border: 1px solid #f3e3cd;
+}
+
+.portal-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  margin-bottom: 22px;
+}
+
+.customer-card .portal-icon {
+  background: #e1d3fb;
+  color: #7954bd;
+}
+
+.admin-card .portal-icon {
+  background: #d1e9df;
+  color: #317e68;
+}
+
+.staff-card .portal-icon {
+  background: #f8dfc1;
+  color: #b67535;
+}
+
+.portal-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  color: #81798c;
+  margin-bottom: 10px;
+}
+
+.portal-card h3 {
+  font-size: 20px;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
+}
+
+.portal-card p {
+  color: #777282;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+
+.portal-action {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+.customer-card .portal-action {
+  color: #7954bd;
+}
+
+.admin-card .portal-action {
+  color: #317e68;
+}
+
+.staff-card .portal-action {
+  color: #b67535;
+}
+
+.home-footer {
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid rgba(130, 115, 150, 0.12);
+  color: #9a94a1;
+  font-size: 11px;
+}
+
+.portal-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 850px) {
+  .portal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .customer-card {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 550px) {
+  .home-header {
+    padding: 22px 6%;
+  }
+
+  .header-tagline {
+    display: none;
+  }
+
+  .home-main {
+    width: 90%;
+  }
+
+  .welcome-section {
+    padding: 55px 10px 40px;
+  }
+
+  .portal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-card {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,265 @@
+.claim-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f0ff, #fff5f1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.claim-back {
+  width: 100%;
+  max-width: 480px;
+  color: #8058c7;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.claim-card {
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  padding: 42px;
+  background: #ffffff;
+  border: 1px solid #eeeaf3;
+  border-radius: 22px;
+  box-shadow: 0 15px 45px rgba(60, 45, 80, 0.07);
+}
+
+.claim-symbol {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  background: #eee7ff;
+  color: #8058c7;
+  border-radius: 15px;
+  font-size: 26px;
+  margin-bottom: 22px;
+}
+
+.claim-label {
+  color: #8058c7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.claim-card h1 {
+  color: #342b45;
+  font-family: 'Playfair Display', serif;
+  font-size: 29px;
+  margin: 12px 0;
+}
+
+.claim-description {
+  color: #81798e;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.claim-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.claim-card label {
+  color: #50465f;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+
+.claim-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #e5deef;
+  border-radius: 10px;
+  outline: none;
+  color: #342b45;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease;
+}
+
+.claim-card input:focus {
+  border-color: #8058c7;
+}
+
+.claim-card form button {
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 20px;
+  background: #8058c7;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.claim-card form button:hover {
+  background: #6841ad;
+}
+
+.claim-card form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.claim-error,
+.claim-success {
+  padding: 11px 13px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 14px 0 0;
+}
+
+.claim-error {
+  color: #c62828;
+  background: #fff0f0;
+  border: 1px solid #f2c4c4;
+}
+
+.claim-success {
+  color: #176b45;
+  background: #e8f7ef;
+  border: 1px solid #b9e5cc;
+}
+
+.claim-result {
+  margin-top: 15px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #f1ebff;
+  text-align: center;
+}
+
+.claim-result span {
+  display: block;
+  color: #8058c7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.claim-result strong {
+  display: block;
+  color: #6841ad;
+  font-size: 30px;
+  margin: 8px 0;
+}
+
+.claim-result p {
+  color: #81798e;
+  font-size: 11px;
+  margin: 0;
+}
+
+.claim-note {
+  color: #9a91a7;
+  font-size: 11px;
+  text-align: center;
+  margin: 25px 0 0;
+}
+
+
+/* =====================================
+   CLAIM CODE - DARK MODE
+===================================== */
+
+:root[data-theme="dark"] .claim-page {
+  background: linear-gradient(135deg, #17141f, #241a29);
+}
+
+:root[data-theme="dark"] .claim-back {
+  color: #c5a2f5;
+}
+
+:root[data-theme="dark"] .claim-card {
+  background: #211c2d;
+  border-color: #393147;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+:root[data-theme="dark"] .claim-symbol {
+  background: #382b50;
+  color: #d6baff;
+}
+
+:root[data-theme="dark"] .claim-label {
+  color: #c5a2f5;
+}
+
+:root[data-theme="dark"] .claim-card h1 {
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .claim-description {
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .claim-card label {
+  color: #e0d5ed;
+}
+
+:root[data-theme="dark"] .claim-card input {
+  background: #17141f;
+  border-color: #49405b;
+  color: #f5efff;
+}
+
+:root[data-theme="dark"] .claim-card input::placeholder {
+  color: #8f839f;
+}
+
+:root[data-theme="dark"] .claim-card input:focus {
+  border-color: #b58be8;
+}
+
+:root[data-theme="dark"] .claim-card form button {
+  background: #8058c7;
+}
+
+:root[data-theme="dark"] .claim-card form button:hover {
+  background: #966fd7;
+}
+
+:root[data-theme="dark"] .claim-error {
+  color: #ffb7c0;
+  background: #40232a;
+  border-color: #743b46;
+}
+
+:root[data-theme="dark"] .claim-success {
+  color: #8ee0b4;
+  background: #18372c;
+  border-color: #32694f;
+}
+
+:root[data-theme="dark"] .claim-result {
+  background: #302441;
+}
+
+:root[data-theme="dark"] .claim-result span {
+  color: #c5a2f5;
+}
+
+:root[data-theme="dark"] .claim-result strong {
+  color: #d6baff;
+}
+
+:root[data-theme="dark"] .claim-result p,
+:root[data-theme="dark"] .claim-note {
+  color: #b5a9c5;
+}

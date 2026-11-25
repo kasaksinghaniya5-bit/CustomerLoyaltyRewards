@@ -1,0 +1,282 @@
+
+.transactions-page {
+  min-height: 100vh;
+  padding: 55px 8%;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #f7f3ff, #fff8f5);
+  font-family: "DM Sans", sans-serif;
+  color: #342b45;
+}
+
+.transactions-page > a {
+  color: #8058c7;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.transactions-header {
+  margin: 45px 0 35px;
+}
+
+.transactions-header span {
+  color: #8058c7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.transactions-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  margin: 12px 0;
+}
+
+.transactions-header p {
+  color: #81798e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.transactions-content {
+  max-width: 950px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #eeeaf3;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(60, 45, 80, 0.05);
+}
+
+.transactions-content > h2 {
+  font-size: 19px;
+  margin: 0 0 7px;
+}
+
+.transactions-content > p {
+  color: #81798e;
+  font-size: 12px;
+}
+
+.transactions-content .transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.transactions-content .transaction-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  background: #fcfbfe;
+  border: 1px solid #eeeaf3;
+  border-radius: 13px;
+}
+
+.transaction-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #eee7ff;
+  color: #8058c7;
+  font-size: 18px;
+}
+
+.transaction-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-details h3 {
+  color: #342b45;
+  font-size: 13px;
+  margin: 0 0 5px;
+}
+
+.transaction-details p {
+  color: #81798e;
+  font-size: 11px;
+  margin: 4px 0;
+}
+
+.transaction-points {
+  text-align: right;
+}
+
+.transaction-points strong {
+  display: block;
+  color: #2f8f61;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.transaction-points span {
+  color: #9a91a7;
+  font-size: 10px;
+}
+
+.transactions-empty {
+  text-align: center;
+  padding: 55px 20px;
+  color: #81798e;
+}
+
+.transactions-empty h3 {
+  color: #342b45;
+  font-size: 16px;
+}
+
+.transactions-empty p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.transaction-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.transaction-pagination button {
+  padding: 10px 16px;
+  border: 1px solid #e5deef;
+  border-radius: 9px;
+  background: #fff;
+  color: #8058c7;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.transaction-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.transaction-pagination span {
+  color: #81798e;
+  font-size: 12px;
+}
+
+@media (max-width: 650px) {
+  .transactions-page {
+    padding: 30px 18px;
+  }
+
+  .transactions-header h1 {
+    font-size: 27px;
+  }
+
+  .transactions-content {
+    padding: 18px;
+  }
+
+  .transactions-content .transaction-item {
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .transaction-pagination {
+    gap: 10px;
+  }
+}
+
+
+/* =====================================
+   TRANSACTIONS - DARK MODE
+===================================== */
+
+:root[data-theme="dark"] .transactions-page {
+  background: linear-gradient(135deg, #17141f, #241a29);
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .transactions-page > a {
+  color: #c5a2f5;
+}
+
+:root[data-theme="dark"] .transactions-header span {
+  color: #c5a2f5;
+}
+
+:root[data-theme="dark"] .transactions-header h1 {
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .transactions-header p {
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .transactions-content {
+  background: #211c2d;
+  border-color: #393147;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .transactions-content > h2 {
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .transactions-content > p {
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .transactions-content .transaction-item {
+  background: #292236;
+  border-color: #40364f;
+}
+
+:root[data-theme="dark"] .transaction-icon {
+  background: #382b50;
+  color: #d6baff;
+}
+
+:root[data-theme="dark"] .transaction-details h3 {
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .transaction-details p {
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .transaction-points strong {
+  color: #75d6a2;
+}
+
+:root[data-theme="dark"] .transaction-points span {
+  color: #9f92af;
+}
+
+:root[data-theme="dark"] .transactions-empty {
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .transactions-empty h3 {
+  color: #f2eaff;
+}
+
+:root[data-theme="dark"] .transactions-empty p {
+  color: #b5a9c5;
+}
+
+:root[data-theme="dark"] .transaction-pagination button {
+  background: #302441;
+  border-color: #49405b;
+  color: #d6baff;
+}
+
+:root[data-theme="dark"] .transaction-pagination button:hover:not(:disabled) {
+  background: #49365f;
+}
+
+:root[data-theme="dark"] .transaction-pagination span {
+  color: #b5a9c5;
+}
+
