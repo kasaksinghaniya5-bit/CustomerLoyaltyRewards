@@ -23,6 +23,10 @@ const customerRoutes = require("./routes/customerRoutes");
 
 app.use("/api/customer", customerRoutes);
 
+const adminRoutes = require("./routes/adminRoutes");
+
+app.use("/api/admin", adminRoutes);
+
 // Connect to MongoDB
 connectDB();
 

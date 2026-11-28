@@ -1,0 +1,334 @@
+
+.admin-customers-page {
+  min-height: 100vh;
+  background: #f5f7f7;
+}
+
+.admin-customers-main {
+  margin-left: 260px;
+  padding: 45px 50px;
+  min-width: 0;
+}
+
+.admin-customers-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.admin-customers-header h1 {
+  margin: 10px 0;
+  color: #193d3b;
+  font-size: 34px;
+}
+
+.admin-customers-header p {
+  color: #788987;
+  margin: 0;
+}
+
+.admin-customers-count {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 17px 24px;
+  background: #ffffff;
+  border: 1px solid #e1eae8;
+  border-radius: 14px;
+}
+
+.admin-customers-count span {
+  color: #788987;
+  font-size: 13px;
+}
+
+.admin-customers-count strong {
+  color: #187c70;
+  font-size: 25px;
+}
+
+.admin-customers-panel {
+  background: #ffffff;
+  border: 1px solid #e4eae8;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.admin-customers-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 28px;
+  border-bottom: 1px solid #e9efed;
+}
+
+.admin-customers-toolbar h2 {
+  margin: 0 0 5px;
+  color: #193d3b;
+  font-size: 19px;
+}
+
+.admin-customers-toolbar p {
+  margin: 0;
+  color: #899592;
+  font-size: 13px;
+}
+
+.admin-customers-toolbar input {
+  width: 330px;
+  max-width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #dce5e2;
+  border-radius: 10px;
+  background: #fafcfb;
+  color: #263c39;
+  outline: none;
+  font-size: 13px;
+}
+
+.admin-customers-toolbar input:focus {
+  border-color: #259b8c;
+  box-shadow: 0 0 0 3px rgba(37, 155, 140, 0.1);
+}
+
+.admin-customers-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.admin-customers-table th {
+  padding: 16px 20px;
+  background: #f5f9f8;
+  color: #71827f;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.admin-customers-table td {
+  padding: 19px 20px;
+  border-bottom: 1px solid #edf1ef;
+  color: #536460;
+  font-size: 13px;
+}
+
+.admin-customers-table tbody tr:hover {
+  background: #fafdfc;
+}
+
+.admin-customers-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-customer-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.admin-customer-identity strong {
+  color: #263f3b;
+  font-size: 13px;
+}
+
+.admin-customer-identity span {
+  color: #98a39f;
+  font-size: 11px;
+}
+
+.admin-customer-status {
+  display: inline-block;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.admin-customer-status.active {
+  background: #e4f6ee;
+  color: #23845d;
+}
+
+.admin-customer-status.suspended {
+  background: #fff0e6;
+  color: #c16b32;
+}
+
+.admin-customer-action {
+  padding: 8px 13px;
+  border: none;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.admin-customer-action.suspend {
+  background: #fff0e9;
+  color: #bd6544;
+}
+
+.admin-customer-action.activate {
+  background: #e5f5ed;
+  color: #26815b;
+}
+
+.admin-customer-action:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(0.96);
+}
+
+.admin-customer-action:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-customers-message {
+  padding: 55px 20px;
+  text-align: center;
+  color: #82918c;
+  font-size: 14px;
+}
+
+.admin-customers-message.error {
+  color: #c15b50;
+}
+
+.admin-customers-message button {
+  display: block;
+  margin: 15px auto 0;
+  padding: 9px 17px;
+  border: none;
+  border-radius: 8px;
+  background: #187c70;
+  color: white;
+  cursor: pointer;
+}
+
+.admin-customers-footer {
+  padding: 17px 25px;
+  border-top: 1px solid #e9efed;
+  color: #899592;
+  font-size: 12px;
+}
+
+/* Dark mode */
+
+:root[data-theme="dark"] .admin-customers-page {
+  background: #171e1e;
+}
+
+:root[data-theme="dark"] .admin-customers-header h1,
+:root[data-theme="dark"] .admin-customers-toolbar h2,
+:root[data-theme="dark"] .admin-customer-identity strong {
+  color: #e2eeeb;
+}
+
+:root[data-theme="dark"] .admin-customers-header p,
+:root[data-theme="dark"] .admin-customers-toolbar p {
+  color: #9badaa;
+}
+
+:root[data-theme="dark"] .admin-customers-count,
+:root[data-theme="dark"] .admin-customers-panel {
+  background: #222d2c;
+  border-color: #354442;
+}
+
+:root[data-theme="dark"] .admin-customers-count span {
+  color: #a6b7b2;
+}
+
+:root[data-theme="dark"] .admin-customers-count strong {
+  color: #65cbbb;
+}
+
+:root[data-theme="dark"] .admin-customers-toolbar,
+:root[data-theme="dark"] .admin-customers-footer {
+  border-color: #354442;
+}
+
+:root[data-theme="dark"] .admin-customers-toolbar input {
+  background: #192322;
+  border-color: #40514e;
+  color: #e2eeeb;
+}
+
+:root[data-theme="dark"] .admin-customers-table th {
+  background: #293735;
+  color: #b2c2bd;
+}
+
+:root[data-theme="dark"] .admin-customers-table td {
+  border-color: #354442;
+  color: #c0ceca;
+}
+
+:root[data-theme="dark"] .admin-customers-table tbody tr:hover {
+  background: #293735;
+}
+
+:root[data-theme="dark"] .admin-customer-identity span {
+  color: #9badaa;
+}
+
+:root[data-theme="dark"] .admin-customer-status.active {
+  background: #23483b;
+  color: #8cdbb6;
+}
+
+:root[data-theme="dark"] .admin-customer-status.suspended {
+  background: #4a3328;
+  color: #f0b18b;
+}
+
+:root[data-theme="dark"] .admin-customer-action.suspend {
+  background: #49332b;
+  color: #f1b092;
+}
+
+:root[data-theme="dark"] .admin-customer-action.activate {
+  background: #23483b;
+  color: #8cdbb6;
+}
+
+:root[data-theme="dark"] .admin-customers-message {
+  color: #a6b7b2;
+}
+
+:root[data-theme="dark"] .admin-customers-footer {
+  color: #a6b7b2;
+}
+
+@media (max-width: 900px) {
+  .admin-customers-main {
+    margin-left: 0;
+    padding: 30px 20px;
+  }
+
+  .admin-customers-header {
+    flex-wrap: wrap;
+  }
+
+  .admin-customers-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-customers-toolbar input {
+    width: 100%;
+  }
+}

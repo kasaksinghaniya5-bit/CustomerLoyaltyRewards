@@ -8,6 +8,7 @@ const Redemption = require("../models/Redemption");
 const mongoose = require("mongoose");
 const crypto = require("crypto");
 const Notification = require("../models/Notification");
+const ActivityLog = require("../models/ActivityLog");
 
 const router = express.Router();
 
@@ -105,6 +106,26 @@ router.post("/claim-code", protect, async (req, res) => {
       referenceId: productCode.code,
       balanceAfter: newBalance,
     });
+
+    // Record product code claim activity
+await ActivityLog.create({
+  type: "code_claimed",
+  description: `${customer.fullName} claimed a product code for ${productCode.productName}.`,
+  customer: customer._id,
+  relatedId: productCode._id,
+  relatedModel: "ProductCode",
+  points: productCode.points,
+});
+
+// Record points earned activity
+await ActivityLog.create({
+  type: "points_earned",
+  description: `${customer.fullName} earned ${productCode.points} points.`,
+  customer: customer._id,
+  relatedId: productCode._id,
+  relatedModel: "ProductCode",
+  points: productCode.points,
+});
 
     res.status(200).json({
       message: `Congratulations! You earned ${productCode.points} points.`,
@@ -306,6 +327,21 @@ router.post("/redeem", protect, async (req, res) => {
         ],
         { session }
       );
+
+      // Record reward redemption activity
+await ActivityLog.create(
+  [
+    {
+      type: "reward_redeemed",
+      description: `${customer.fullName} redeemed ${reward.name} for ${reward.pointsCost} points.`,
+      customer: customer._id,
+      relatedId: redemption[0]._id,
+      relatedModel: "Redemption",
+      points: reward.pointsCost,
+    },
+  ],
+  { session }
+);
 
       await PointsTransaction.create(
         [

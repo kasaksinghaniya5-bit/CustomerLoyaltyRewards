@@ -13,6 +13,11 @@ import Rewards from "./pages/Rewards";
 import Redemptions from "./pages/Redemptions";
 import Notifications from "./pages/Notifications";
 import Leaderboard from "./pages/Leaderboard";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminCustomers from "./pages/AdminCustomers";
+import AdminProductCodes from "./pages/AdminProductCodes";
+import AdminRewards from "./pages/AdminRewards";
+import AdminRedemptions from "./pages/AdminRedemptions";
 
 function App() {
   return (
@@ -31,6 +36,14 @@ function App() {
         <Route path="/customer/redemptions" element={<Redemptions />} />
         <Route path="/customer/notifications" element={<Notifications />} />
         <Route path="/customer/leaderboard" element={<Leaderboard />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/customers" element={<AdminCustomers />} />
+        <Route path="/admin/product-codes" element={<AdminProductCodes />} />
+        <Route path="/admin/rewards" element={<AdminRewards />} />
+        <Route
+  path="/admin/redemptions"
+  element={<AdminRedemptions />}
+/>
       </Routes>
     </ThemeProvider>
   );

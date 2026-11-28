@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Customer = require("../models/Customer");
+const ActivityLog = require("../models/ActivityLog");
 
 const router = express.Router();
 
@@ -68,6 +69,13 @@ router.post("/register", async (req, res) => {
       username: cleanUsername,
       password: hashedPassword,
     });
+
+    // Record customer registration activity
+await ActivityLog.create({
+  type: "customer_registered",
+  description: `${newCustomer.fullName} registered a new account.`,
+  customer: newCustomer._id,
+});
 
     res.status(201).json({
       message: "Customer account created successfully!",

@@ -50,15 +50,23 @@ function PortalLogin() {
         password,
       });
 
-      if (role === "customer") {
-        localStorage.setItem("customerToken", response.data.token);
-        localStorage.setItem(
-          "customerData",
-          JSON.stringify(response.data.customer)
-        );
+     if (role === "customer") {
+  localStorage.setItem("customerToken", response.data.token);
+  localStorage.setItem(
+    "customerData",
+    JSON.stringify(response.data.customer)
+  );
 
-        navigate("/customer/dashboard");
-      }
+  navigate("/customer/dashboard");
+} else if (role === "admin") {
+  localStorage.setItem("adminToken", response.data.token);
+  localStorage.setItem(
+    "adminData",
+    JSON.stringify(response.data.customer)
+  );
+
+  navigate("/admin/dashboard");
+}
 
     } catch (error) {
       setLoginError(

@@ -1,0 +1,380 @@
+
+.admin-redemptions-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: var(--bg-primary, #f5f8f8);
+  color: var(--text-primary, #243333);
+}
+
+.admin-redemptions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.admin-redemptions-eyebrow {
+  color: #159b91;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.admin-redemptions-header h1 {
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+.admin-redemptions-header p:last-child {
+  color: var(--text-secondary, #718080);
+  margin: 0;
+}
+
+.admin-redemptions-refresh {
+  background: #159b91;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 11px 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-redemptions-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-redemptions-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.admin-redemption-stat {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2ebea);
+  border-radius: 13px;
+  padding: 20px;
+}
+
+.admin-redemption-stat span {
+  display: block;
+  color: var(--text-secondary, #718080);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.admin-redemption-stat strong {
+  font-size: 27px;
+  color: var(--text-primary, #243333);
+}
+
+.admin-redemptions-toolbar {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.admin-redemptions-toolbar input,
+.admin-redemptions-toolbar select {
+  background: var(--input-bg, #ffffff);
+  color: var(--text-primary, #243333);
+  border: 1px solid var(--border-color, #dce6e5);
+  border-radius: 9px;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+.admin-redemptions-toolbar input {
+  flex: 1;
+}
+
+.admin-redemptions-toolbar input:focus,
+.admin-redemptions-toolbar select:focus {
+  border-color: #159b91;
+  box-shadow: 0 0 0 3px rgba(21, 155, 145, 0.12);
+}
+
+.admin-redemptions-toolbar input::placeholder {
+  color: var(--text-secondary, #879393);
+}
+
+.admin-redemptions-table-container {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2ebea);
+  border-radius: 13px;
+  overflow-x: auto;
+}
+
+.admin-redemptions-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 1050px;
+}
+
+.admin-redemptions-table th {
+  background: var(--table-header-bg, #edf5f4);
+  color: var(--text-secondary, #627575);
+  padding: 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.admin-redemptions-table td {
+  padding: 16px;
+  border-top: 1px solid var(--border-color, #edf0f0);
+  font-size: 13px;
+  color: var(--text-primary, #354444);
+}
+
+.admin-redemptions-table tbody tr:hover {
+  background: var(--table-hover-bg, #f7fbfa);
+}
+
+.admin-redemption-customer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 150px;
+}
+
+.admin-redemption-customer strong {
+  font-size: 13px;
+}
+
+.admin-redemption-customer span {
+  color: var(--text-secondary, #829090);
+  font-size: 12px;
+}
+
+.admin-redemption-code {
+  display: inline-block;
+  background: var(--code-bg, #f0f5f4);
+  color: #159b91;
+  border-radius: 6px;
+  padding: 6px 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.admin-redemption-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.admin-redemption-status.active {
+  background: #e1f5ed;
+  color: #16845c;
+}
+
+.admin-redemption-status.used {
+  background: #e3edff;
+  color: #3867b0;
+}
+
+.admin-redemption-status.expired {
+  background: #fff0df;
+  color: #b66a1e;
+}
+
+.admin-redemption-status.cancelled {
+  background: #ffe5e5;
+  color: #c34b4b;
+}
+
+.admin-redemption-collect {
+  background: #159b91;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.admin-redemption-collect:hover {
+  background: #117e76;
+}
+
+.admin-redemption-collect:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-redemption-no-action {
+  color: var(--text-secondary, #9aa5a5);
+}
+
+.admin-redemptions-message {
+  padding: 13px 16px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.admin-redemptions-message.error {
+  background: #ffe9e9;
+  color: #bd4040;
+}
+
+.admin-redemptions-message.success {
+  background: #e2f7eb;
+  color: #188451;
+}
+
+.admin-redemptions-empty {
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--text-secondary, #7d8b8b);
+  font-size: 14px;
+}
+
+.admin-redemptions-count {
+  margin-top: 14px;
+  color: var(--text-secondary, #718080);
+  font-size: 12px;
+  text-align: right;
+}
+
+/* Dark mode */
+[data-theme="dark"] .admin-redemptions-page {
+  background: var(--bg-primary, #171d25);
+  color: var(--text-primary, #edf2f2);
+}
+
+[data-theme="dark"] .admin-redemption-stat,
+[data-theme="dark"] .admin-redemptions-table-container {
+  background: var(--card-bg, #222b35);
+  border-color: var(--border-color, #35414d);
+}
+
+[data-theme="dark"] .admin-redemption-stat strong {
+  color: var(--text-primary, #edf2f2);
+}
+
+[data-theme="dark"] .admin-redemptions-toolbar input,
+[data-theme="dark"] .admin-redemptions-toolbar select {
+  background: var(--input-bg, #222b35);
+  color: var(--text-primary, #edf2f2);
+  border-color: var(--border-color, #35414d);
+}
+
+[data-theme="dark"] .admin-redemptions-toolbar input::placeholder {
+  color: #9ba8b3;
+}
+
+[data-theme="dark"] .admin-redemptions-table th {
+  background: var(--table-header-bg, #293640);
+  color: #b9c8ca;
+}
+
+[data-theme="dark"] .admin-redemptions-table td {
+  color: var(--text-primary, #edf2f2);
+  border-color: var(--border-color, #35414d);
+}
+
+[data-theme="dark"] .admin-redemptions-table tbody tr:hover {
+  background: var(--table-hover-bg, #29343e);
+}
+
+[data-theme="dark"] .admin-redemption-code {
+  background: var(--code-bg, #293b40);
+  color: #54d3c5;
+}
+
+[data-theme="dark"] .admin-redemption-status.active {
+  background: #174536;
+  color: #72d6aa;
+}
+
+[data-theme="dark"] .admin-redemption-status.used {
+  background: #243b5e;
+  color: #9bbdff;
+}
+
+[data-theme="dark"] .admin-redemption-status.expired {
+  background: #51391f;
+  color: #ffc17c;
+}
+
+[data-theme="dark"] .admin-redemption-status.cancelled {
+  background: #512d32;
+  color: #ffaaaa;
+}
+
+[data-theme="dark"] .admin-redemptions-message.error {
+  background: #512d32;
+  color: #ffaaaa;
+}
+
+[data-theme="dark"] .admin-redemptions-message.success {
+  background: #174536;
+  color: #72d6aa;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .admin-redemptions-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-redemptions-page {
+    padding: 25px 16px;
+  }
+
+  .admin-redemptions-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-redemptions-header h1 {
+    font-size: 24px;
+  }
+
+  .admin-redemptions-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-redemptions-toolbar {
+    flex-direction: column;
+  }
+
+  .admin-redemptions-toolbar input,
+  .admin-redemptions-toolbar select {
+    width: 100%;
+  }
+}
+
+.admin-redemptions-back {
+  display: inline-block;
+  color: #159b91;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.admin-redemptions-back:hover {
+  text-decoration: underline;
+}
+
+[data-theme="dark"] .admin-redemptions-back {
+  color: #54d3c5;
+}

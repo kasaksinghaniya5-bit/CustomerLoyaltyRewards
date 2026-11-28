@@ -1,3 +1,4 @@
+
 import axios from "axios";
 
 const api = axios.create({
@@ -7,9 +8,17 @@ const api = axios.create({
   },
 });
 
-// Attach customer authentication token to requests
+// Attach the correct authentication token
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("customerToken");
+  const url = config.url || "";
+
+  let token;
+
+  if (url.startsWith("/admin")) {
+    token = localStorage.getItem("adminToken");
+  } else if (url.startsWith("/customer")) {
+    token = localStorage.getItem("customerToken");
+  }
 
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;

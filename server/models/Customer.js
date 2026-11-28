@@ -32,7 +32,7 @@ const customerSchema = new mongoose.Schema(
     role: {
       type: String,
       default: "customer",
-      enum: ["customer"],
+      enum: ["customer", "admin", "staff"],
     },
 
     status: {
